@@ -59,10 +59,14 @@
     }
   }
   &__title {
-    font-size: 1.7em;
-    font-weight: 700;
-    @include media.query(">=md") {
-      font-size: 2em;
+    &--ref {
+      font-size: 1.7em;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      @include media.query(">=md") {
+        font-size: 2em;
+      }
     }
   }
   &__description {
