@@ -1,0 +1,176 @@
+@use "../abstracts/breakpoints" as media;
+@use "../abstracts/variables";
+@use "../abstracts/functions";
+
+%list-design {
+  display: inline-block;
+  padding: rem(12px);
+  text-decoration: none;
+  // text-transform: uppercase;
+  color: #000;
+  font-weight: 700;
+}
+
+.navbar {
+  background-color: #fff;
+  color: #000;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  z-index: 200;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  transition: background-color 1s ease-in-out, box-shadow 1s ease-in-out;
+  &__logo {
+    margin: rem(6px);
+    padding-left: rem(15px);
+    font-size: rem(25px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    z-index: 300;
+  }
+  &__list {
+    display: none;
+    list-style: none;
+    margin-left: -10%;
+  }
+  &__item {
+    @extend %list-design;
+  }
+  &__action {
+    @extend %list-design;
+    font-size: 1.5rem;
+    &:hover {
+      background-color: orange;
+    }
+  }
+  &__btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    padding: 25px;
+    background-color: transparent;
+    border-color: transparent;
+    transition: transform 0.1s ease-out;
+    z-index: 300;
+    // &:focus .navbar__line:after {
+    //   background-color: $toggle-line-focus-color;
+    // }
+  }
+  &__line {
+    display: block;
+    width: $toggle-size;
+    padding: $toggle-line-size/2;
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: $toggle-line-size;
+      background-color: $toggle-line-color;
+      border-radius: 2px;
+      transition: background-color 0.2s ease-in-out;
+    }
+    .open & {
+      @for $i from 1 through 2 {
+        &:nth-child(#{$i}) {
+          animation: jump-#{$i} $toggle-speed forwards ease-in-out;
+          &:after {
+            animation: line-#{$i} $toggle-speed forwards ease-in-out;
+          }
+        }
+      }
+    }
+    .close & {
+      @for $i from 1 through 2 {
+        &:nth-child(#{$i}) {
+          animation: jump-#{$i} $toggle-speed reverse ease-in-out;
+          &:after {
+            animation: line-#{$i} $toggle-speed reverse ease-in-out;
+          }
+        }
+      }
+    }
+    .open &,
+    .close & {
+      &:nth-child(3) {
+        animation: jump-3 $toggle-speed forwards ease-in-out;
+      }
+    }
+  }
+  &__flag {
+    display: none;
+    align-items: center;
+    &--cr {
+      width: rem(27px);
+    }
+  }
+  @include media.query(">=md") {
+    color: #000 !important;
+    &__list {
+      display: block;
+    }
+    &__flag {
+      display: flex;
+    }
+    &__btn {
+      display: none;
+    }
+  }
+}
+
+.snow {
+  &__logo {
+    color: snow;
+  }
+}
+.snow::after {
+  background-color: snow;
+}
+
+.mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: -100%;
+  left: 0;
+  z-index: 100;
+  background-color: transparent;
+  transition: top 1s ease-in-out, background-color 1s ease-in-out;
+  &__list {
+    list-style: none;
+  }
+  &__item {
+    padding-bottom: 4rem;
+  }
+  &__action {
+    font-size: 1.5rem;
+    color: snow;
+    text-decoration: none;
+    // text-transform: uppercase;
+    transition: color 0.4s ease-in-out, display 5s ease-in-out;
+  }
+  &__flag {
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    &--cr {
+      width: rem(27px);
+    }
+  }
+  @include media.query(">=md") {
+    display: none;
+    top: -50%;
+  }
+}

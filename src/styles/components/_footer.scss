@@ -1,0 +1,31 @@
+@use "../abstracts/variables";
+@use "../abstracts/functions";
+@use "../abstracts/breakpoints" as media;
+
+.footer {
+  background-color: $light-orange;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+  &__project {
+    margin-bottom: 1rem;
+  }
+  &__project > a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+  }
+  &__author > a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    &::after {
+      margin-left: 1rem;
+      content: "\00a9";
+    }
+  }
+}

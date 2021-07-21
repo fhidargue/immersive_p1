@@ -1,0 +1,33 @@
+$breakpoints: (
+  "sm": 768px,
+  "md": 1024px,
+  "lg": 1200px,
+  "xl": 1400px,
+);
+
+$root-font-size: 16px;
+//$root-font-family: "Quicksand", sans-serif;
+
+$root-font-family: "Poppins", sans-serif;
+
+/* COLORS */
+
+$darker-orange: #802b0f;
+$dark-orange: #e75423;
+$orange: #fb6107;
+$soft-orange: #fbb02d;
+$light-orange: #f3de2c;
+$green: #73a024;
+$light-green: #a9c972;
+$dark-green: #5c8001;
+$cream: #fffab9;
+$light-cream: #fffde4;
+
+/* BURGER LINES */
+
+$toggle-size: 32px;
+$toggle-line-color: #000;
+$toggle-line-focus-color: #fffab9;
+$toggle-line-size: $toggle-size/8;
+$toggle-line-angle: 405deg;
+$toggle-speed: 0.9s;

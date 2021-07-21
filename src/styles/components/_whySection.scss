@@ -1,0 +1,94 @@
+@use "../abstracts/variables";
+@use "../abstracts/functions";
+@use "../abstracts/breakpoints" as media;
+
+.why {
+  background-color: $light-orange;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 30vh;
+  position: relative;
+  color: #000;
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    &::after {
+      content: "";
+      position: absolute;
+      width: rem(100px);
+      height: rem(3px);
+      background: $orange;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 48%;
+    }
+    @include media.query(">=sm") {
+      font-size: 3rem;
+
+      &::after {
+        width: rem(150px);
+      }
+    }
+  }
+  &__answer {
+    font-size: 1.5rem;
+    padding: 5%;
+  }
+  @include media.query(">=md") {
+    margin-top: 7rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.slideshow {
+  margin: 40px auto;
+  width: rem(240px);
+  padding: rem(10px);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  &__slide {
+    &--option {
+      font-size: 1.5rem;
+      color: #000;
+      @include media.query(">=sm") {
+        font-size: 2rem;
+      }
+      @include media.query(">=md") {
+        font-size: 2.3rem;
+      }
+    }
+    &--text1 {
+      color: $green;
+      text-transform: uppercase;
+      font-family: "Bebas Neue", cursive;
+      font-size: 2rem;
+      @include media.query(">=sm") {
+        font-size: 3rem;
+      }
+      @include media.query(">=md") {
+        font-size: 4rem;
+      }
+    }
+    &--text2 {
+      color: $green;
+      text-transform: uppercase;
+      font-family: "Bebas Neue", cursive;
+      font-size: 2rem;
+      @include media.query(">=sm") {
+        font-size: 3rem;
+      }
+      @include media.query(">=md") {
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+.slideshow > .slideshow__slide {
+  position: absolute;
+}

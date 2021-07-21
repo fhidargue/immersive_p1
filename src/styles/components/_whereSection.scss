@@ -1,0 +1,90 @@
+@use "../abstracts/variables";
+@use "../abstracts/functions";
+@use "../abstracts/breakpoints" as media;
+
+.images {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include media.query(">=500px") {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  @include media.query(">=md") {
+    flex-wrap: nowrap;
+  }
+}
+
+.province {
+  position: relative;
+  width: 100%;
+  @include media.query(">=500px") {
+    width: 50%;
+  }
+  @include media.query(">=630px") {
+    width: 33%;
+  }
+  @include media.query(">=md") {
+    width: 100%;
+  }
+  &__image {
+    display: block;
+    width: 100%;
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+    &:hover {
+      opacity: 1;
+      & > * {
+        transform: translateY(0);
+      }
+    }
+    & > * {
+      transform: translateY(20px);
+      transition: transform 0.5s ease-in-out;
+    }
+  }
+  &__title {
+    font-size: 1.7em;
+    font-weight: 700;
+    @include media.query(">=md") {
+      font-size: 2em;
+    }
+  }
+  &__description {
+    font-size: rem(15px);
+    margin-top: 0.25rem;
+    @include media.query(">=1600px") {
+      font-size: 1.1em;
+    }
+  }
+}
+
+.where {
+  text-align: center;
+  padding-bottom: 5%;
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    padding: 0 2rem;
+    margin: 4rem 0;
+    @include media.query(">=sm") {
+      font-size: 3rem;
+    }
+  }
+}

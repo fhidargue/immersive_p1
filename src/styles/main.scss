@@ -1,0 +1,21 @@
+// ABSTRACT
+@import "./abstracts/variables.scss";
+@import "./abstracts/functions";
+@import "./abstracts/keyframes";
+
+// BASE
+@import "./base/reset";
+
+// COMPONENTS
+@import "./components/headings";
+@import "./components/container";
+@import "./components/whySection";
+@import "./components/whatSection";
+@import "./components/whoSection";
+@import "./components/whereSection";
+@import "./components/whenSection";
+@import "./components/footer";
+
+//FONTS
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cedarville+Cursive&display=swap");

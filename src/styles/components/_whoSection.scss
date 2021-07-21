@@ -1,0 +1,77 @@
+@use "../abstracts/variables";
+@use "../abstracts/functions";
+@use "../abstracts/breakpoints" as media;
+
+.who {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 30vh;
+  position: relative;
+  background-color: $green;
+  color: #fff;
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    &::after {
+      content: "";
+      position: absolute;
+      width: rem(100px);
+      height: rem(3px);
+      background: $soft-orange;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 30%;
+      @include media.query(">=455px") {
+        top: 36%;
+      }
+      @include media.query(">=500px") {
+        top: 43%;
+      }
+      @include media.query(">=540px") {
+        top: 43%;
+      }
+      @include media.query(">=600px") {
+        top: 42%;
+      }
+      @include media.query(">=920px") {
+        top: -4%;
+      }
+      @include media.query(">=1600px") {
+        top: 5%;
+      }
+    }
+    @include media.query(">=sm") {
+      font-size: 3rem;
+
+      &::after {
+        width: rem(150px);
+      }
+    }
+    @include media.query(">=600px") {
+      margin-bottom: 3rem;
+    }
+    @include media.query(">=820px") {
+      margin-top: -1rem;
+    }
+    @include media.query(">=920px") {
+      margin-top: -13rem;
+    }
+  }
+  &__text {
+    font-size: 1.5rem;
+    @include media.query(">=sm") {
+      font-size: 2rem;
+    }
+    @include media.query(">=md") {
+      font-size: 2.3rem;
+    }
+  }
+  @include media.query(">=md") {
+    margin-top: 9rem;
+  }
+}

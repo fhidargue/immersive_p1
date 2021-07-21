@@ -1,0 +1,311 @@
+@use "../abstracts/variables";
+@use "../abstracts/functions";
+@use "../abstracts/breakpoints" as media;
+
+.what {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 5%;
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    padding: 0 2rem;
+    margin: 4rem 0;
+    @include media.query(">=sm") {
+      font-size: 3rem;
+    }
+  }
+  &__left {
+    margin-bottom: 3rem;
+    @include media.query(">=md") {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+  &__middle {
+    margin-bottom: 3rem;
+    @include media.query(">=md") {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+  &__right {
+    margin-bottom: 3rem;
+  }
+}
+
+.activities {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include media.query(">=md") {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  @include media.query(">=xl") {
+    flex-wrap: nowrap;
+  }
+}
+
+.left {
+  position: relative;
+  &__content {
+    height: 30vh;
+    transition: transform 0.5s ease-in-out;
+    &--image {
+      width: rem(340px);
+      height: 100%;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      @include media.query(">=sm") {
+        width: rem(400px);
+      }
+      @include media.query(">=xl") {
+        // box-shadow: 0 -5px 3px -3px black, 0 5px 3px -3px black;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+    }
+    @include media.query(">=md") {
+      height: 35vh;
+    }
+    @include media.query(">=xl") {
+      height: 37vh;
+    }
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+  &__details {
+    position: absolute;
+    top: rem(-21px);
+    right: rem(-10px);
+    width: 60%;
+    padding: 3%;
+    background-color: $dark-orange;
+    box-shadow: 0.5rem 0.5rem $light-orange, -0.5rem -0.5rem $soft-orange;
+    transition: transform 0.5s ease-in-out;
+    &--title > a {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.7rem;
+    }
+    &--content {
+      color: #fff;
+      font-size: rem(20px);
+      font-weight: 700;
+    }
+    &:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+  }
+}
+
+.middle {
+  position: relative;
+  &__content {
+    height: 40vh;
+    transition: transform 0.5s ease-in-out;
+    &--image {
+      width: rem(340px);
+      height: 100%;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      @include media.query(">=sm") {
+        width: rem(400px);
+      }
+    }
+    @include media.query(">=md") {
+      height: 35vh;
+    }
+    @include media.query(">=xl") {
+      height: 50vh;
+    }
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+  &__details {
+    position: absolute;
+    bottom: rem(-25px);
+    left: rem(-15px);
+    width: 60%;
+    padding: 3%;
+    background-color: $dark-orange;
+    box-shadow: 0.5rem 0.5rem $light-orange, -0.5rem -0.5rem $soft-orange;
+    transition: transform 0.5s ease-in-out;
+    &--title > a {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.7rem;
+    }
+    &--content {
+      color: #fff;
+      font-size: rem(20px);
+      font-weight: 700;
+    }
+    @include media.query(">=md") {
+      right: rem(-15px);
+      left: initial;
+    }
+    &:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+  }
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  &__top {
+    position: relative;
+    margin-bottom: 3rem;
+    @include media.query(">=md") {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+    @include media.query(">=xl") {
+      margin-bottom: 1rem;
+    }
+  }
+  &__bottom {
+    position: relative;
+    @include media.query(">=md") {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+  &__content {
+    &--top {
+      height: 30vh;
+      transition: transform 0.5s ease-in-out;
+      &Image {
+        width: rem(340px);
+        height: 100%;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        @include media.query(">=sm") {
+          width: rem(400px);
+        }
+        @include media.query(">=xl") {
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+            rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+            rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+      }
+      @include media.query(">=md") {
+        height: 35vh;
+      }
+      @include media.query(">=xl") {
+        height: 25vh;
+      }
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+    &--bottom {
+      height: 30vh;
+      transition: transform 0.5s ease-in-out;
+      &Image {
+        width: rem(340px);
+        height: 100%;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        @include media.query(">=sm") {
+          width: rem(400px);
+        }
+      }
+      @include media.query(">=md") {
+        height: 35vh;
+      }
+      @include media.query(">=xl") {
+        height: 25vh;
+      }
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+  }
+  &__details {
+    &--top {
+      position: absolute;
+      bottom: rem(-21px);
+      right: rem(-10px);
+      width: 60%;
+      padding: 3%;
+      background-color: $dark-orange;
+      box-shadow: 0.5rem 0.5rem $light-orange, -0.5rem -0.5rem $soft-orange;
+      transition: transform 0.5s ease-in-out;
+      @include media.query(">=md") {
+        top: rem(-15px);
+        left: rem(-30px);
+        bottom: initial;
+        right: initial;
+      }
+      @include media.query(">=md") {
+        top: rem(-25px);
+        right: rem(-15px);
+        bottom: initial;
+        left: initial;
+      }
+      &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+    }
+    &--bottom {
+      position: absolute;
+      bottom: rem(-21px);
+      left: rem(-15px);
+      width: 60%;
+      padding: 3%;
+      background-color: $dark-orange;
+      box-shadow: 0.5rem 0.5rem $light-orange, -0.5rem -0.5rem $soft-orange;
+      transition: transform 0.5s ease-in-out;
+      @include media.query(">=md") {
+        bottom: rem(11px);
+      }
+      @include media.query(">=md") {
+        right: rem(-15px);
+        bottom: rem(-25px);
+        left: initial;
+      }
+      &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+    }
+    &--title > a {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.7rem;
+    }
+    &--content {
+      color: #fff;
+      font-size: rem(20px);
+      font-weight: 700;
+    }
+  }
+  @include media.query(">=md") {
+    flex-direction: row;
+  }
+  @include media.query(">=xl") {
+    flex-direction: column;
+  }
+}
