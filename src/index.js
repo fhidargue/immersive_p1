@@ -35,6 +35,7 @@ $(document).ready(function() {
             $(".navbar__line").removeClass('snow');
             $(".mobile__flag").css('opacity', '0');
             $('.navbar').css('box-shadow', '0 2px 4px 0 rgba(0, 0, 0, 0.2)');
+            $(".navbar__logo").removeClass('snow__logo');
         }
         else{
             $(".mobile").addClass("mobile--open");
@@ -47,6 +48,7 @@ $(document).ready(function() {
             $('.navbar').css('background-color', '#fb6107');
             $('.navbar').css('box-shadow', '0 0px 0px 0 rgb(0 0 0 / 20%)');
             $(".navbar__line").addClass('snow');
+            $(".navbar__logo").addClass('snow__logo');
         }
     });
     /* BUTTON VALIDATION */
@@ -93,6 +95,24 @@ $(document).ready(function() {
             result.text("Please enter an email.");
             $('.information__message').focus();
           } 
+    });
+
+    $('.mobile__action').click(function() {
+      if($(".mobile").hasClass("mobile--open")){
+        $(".mobile").removeClass("mobile--open");
+        $(".mobile").css('top', '-100%');
+            $(".mobile").css('background-color', 'transparent');
+            $(".mobile__action").css('color', 'transparent');
+            $(".navbar").removeClass('snow__logo');
+            $('.navbar').css('background-color', '#fff');
+            $(".navbar__line:after").css('color', 'black');
+            $(".navbar__line").removeClass('snow');
+            $(".mobile__flag").css('opacity', '0');
+            $('.navbar').css('box-shadow', '0 2px 4px 0 rgba(0, 0, 0, 0.2)');
+    }
+    else{
+        $(".mobile").addClass("mobile--open");
+    }
     });
 });
 

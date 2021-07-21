@@ -3,13 +3,13 @@
 @use "../abstracts/breakpoints" as media;
 
 .why {
-  background-color: $light-orange;
+  background-color: $green;
   margin-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 30vh;
+  height: 50vh;
   position: relative;
   color: #000;
   &__title {
@@ -21,17 +21,32 @@
       position: absolute;
       width: rem(100px);
       height: rem(3px);
-      background: $orange;
+      background: $light-orange;
       left: 50%;
       transform: translateX(-50%);
       top: 48%;
     }
     @include media.query(">=sm") {
-      font-size: 3rem;
+      font-size: 3.2rem;
 
       &::after {
         width: rem(150px);
       }
+    }
+    @include media.query(">=md") {
+      margin-right: 2rem;
+      &::after {
+        content: none;
+      }
+    }
+    @include media.query(">=xl") {
+      margin-right: 12rem;
+    }
+    @include media.query(">=1600px") {
+      margin-right: 25rem;
+    }
+    @include media.query(">=lg") {
+      color: #fff;
     }
   }
   &__answer {
@@ -41,6 +56,15 @@
   @include media.query(">=md") {
     margin-top: 7rem;
     margin-bottom: 2rem;
+    background-image: url("../base/que-rico-un-smoothie2.png");
+    background-size: cover;
+    align-items: flex-end;
+  }
+  @include media.query(">=1600px") {
+    height: 60vh;
+  }
+  @include media.query(">=lg") {
+    color: #fff;
   }
 }
 
@@ -55,37 +79,60 @@
     &--option {
       font-size: 1.5rem;
       color: #000;
+      font-weight: 700;
       @include media.query(">=sm") {
         font-size: 2rem;
       }
       @include media.query(">=md") {
-        font-size: 2.3rem;
+        font-size: 1.6rem;
+      }
+      @include media.query(">=lg") {
+        color: #fff;
       }
     }
     &--text1 {
-      color: $green;
+      color: #000;
       text-transform: uppercase;
-      font-family: "Bebas Neue", cursive;
+      font-family: "Dancing Script", cursive;
       font-size: 2rem;
+      font-weight: 700;
       @include media.query(">=sm") {
         font-size: 3rem;
       }
       @include media.query(">=md") {
+        color: $light-orange;
+      }
+      @include media.query(">=1600px") {
         font-size: 4rem;
       }
     }
     &--text2 {
-      color: $green;
+      color: #000;
       text-transform: uppercase;
-      font-family: "Bebas Neue", cursive;
+      font-family: "Dancing Script", cursive;
       font-size: 2rem;
+      font-weight: 700;
       @include media.query(">=sm") {
         font-size: 3rem;
       }
       @include media.query(">=md") {
+        color: $light-orange;
+      }
+      @include media.query(">=1600px") {
         font-size: 4rem;
       }
     }
+  }
+  @include media.query(">=md") {
+    justify-content: flex-start;
+    margin: 40px rem(250px);
+  }
+  @include media.query(">=xl") {
+    justify-content: flex-start;
+    margin: 40px 30rem;
+  }
+  @include media.query(">=1600px") {
+    margin: 40px 45rem;
   }
 }
 

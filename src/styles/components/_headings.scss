@@ -27,11 +27,22 @@
   &__logo {
     margin: rem(6px);
     padding-left: rem(15px);
+    padding-right: rem(15px);
     font-size: rem(25px);
     cursor: pointer;
     display: flex;
     align-items: center;
     z-index: 300;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    &:focus {
+      background-color: $orange;
+      color: #fff;
+      border: none;
+      box-shadow: 0.5rem 0.5rem $light-orange, -0.5rem -0.5rem $soft-orange;
+      outline: none;
+    }
   }
   &__list {
     display: none;
@@ -44,8 +55,19 @@
   &__action {
     @extend %list-design;
     font-size: 1.5rem;
+    position: relative;
+    transition: color 0.4s ease-in-out, font-size 0.4s ease-in-out,
+      box-shadow 0.4s ease-in-out;
     &:hover {
-      background-color: orange;
+      color: $orange;
+      font-size: 1.53rem;
+    }
+    &:focus {
+      background-color: $orange;
+      color: #fff;
+      border: none;
+      box-shadow: 0.5rem 0.5rem $light-orange, -0.5rem -0.5rem $soft-orange;
+      outline: none;
     }
   }
   &__btn {
@@ -123,6 +145,16 @@
       display: none;
     }
   }
+  & .open {
+    transition: color 0.4s ease-in-out, box-shadow 0.4s ease-in-out,
+      background-color 0.1s ease-in-out;
+    &:focus {
+      background-color: transparent;
+      border: none;
+      box-shadow: 0.5rem 0.5rem $light-orange, -0.5rem -0.5rem $soft-orange;
+      outline: none;
+    }
+  }
 }
 
 .snow {
@@ -159,7 +191,15 @@
     color: snow;
     text-decoration: none;
     // text-transform: uppercase;
-    transition: color 0.4s ease-in-out, display 5s ease-in-out;
+    transition: color 0.4s ease-in-out, display 5s ease-in-out,
+      box-shadow 0.4s ease-in-out;
+    padding: 0.5rem;
+    &:focus {
+      background-color: transparent;
+      border: none;
+      box-shadow: 0.5rem 0.5rem $light-orange, -0.5rem -0.5rem $soft-orange;
+      outline: none;
+    }
   }
   &__flag {
     align-items: center;

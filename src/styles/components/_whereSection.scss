@@ -59,14 +59,12 @@
     }
   }
   &__title {
-    &--ref {
-      font-size: 1.7em;
-      font-weight: 700;
-      color: #fff;
-      text-decoration: none;
-      @include media.query(">=md") {
-        font-size: 2em;
-      }
+    font-size: 1.7em;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    @include media.query(">=md") {
+      font-size: 2em;
     }
   }
   &__description {
@@ -74,6 +72,16 @@
     margin-top: 0.25rem;
     @include media.query(">=1600px") {
       font-size: 1.1em;
+    }
+  }
+  outline: none;
+  &:focus {
+    .province__overlay {
+      opacity: 1;
+      & > * {
+        transform: translateY(0);
+      }
+      box-shadow: rem(0px) 0.5rem $light-orange, rem(0px) -0.5rem $soft-orange;
     }
   }
 }
@@ -86,9 +94,18 @@
     font-weight: 700;
     color: #000;
     padding: 0 2rem;
-    margin: 4rem 0;
+    margin: 3rem 0;
     @include media.query(">=sm") {
       font-size: 3rem;
+    }
+  }
+  &__guide {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    @include media.query(">=lg") {
+      display: none;
     }
   }
 }

@@ -10,8 +10,8 @@
   text-align: center;
   height: 30vh;
   position: relative;
-  background-color: $green;
-  color: #fff;
+  background-color: $papaya;
+  color: #000;
   &__title {
     font-size: 1.8rem;
     font-weight: 700;
@@ -22,7 +22,7 @@
       position: absolute;
       width: rem(100px);
       height: rem(3px);
-      background: $soft-orange;
+      background: $orange;
       left: 50%;
       transform: translateX(-50%);
       top: 30%;
@@ -38,11 +38,14 @@
       @include media.query(">=600px") {
         top: 42%;
       }
+      @include media.query(">=820px") {
+        top: 36%;
+      }
       @include media.query(">=920px") {
-        top: -4%;
+        top: 40%;
       }
       @include media.query(">=1600px") {
-        top: 5%;
+        top: 45%;
       }
     }
     @include media.query(">=sm") {
@@ -59,19 +62,26 @@
       margin-top: -1rem;
     }
     @include media.query(">=920px") {
-      margin-top: -13rem;
+      margin-top: 0rem;
     }
   }
   &__text {
     font-size: 1.5rem;
+    font-weight: 700;
     @include media.query(">=sm") {
       font-size: 2rem;
     }
     @include media.query(">=md") {
       font-size: 2.3rem;
     }
+    @include media.query(">=lg") {
+      padding: 0 10rem;
+    }
   }
   @include media.query(">=md") {
     margin-top: 9rem;
+  }
+  @include media.query(">=sm") {
+    height: 40vh;
   }
 }

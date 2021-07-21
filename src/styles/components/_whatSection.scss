@@ -91,9 +91,8 @@
     width: 60%;
     padding: 3%;
     background-color: $dark-orange;
-    box-shadow: 0.5rem 0.5rem $light-orange, -0.5rem -0.5rem $soft-orange;
-    transition: transform 0.5s ease-in-out;
-    &--title > a {
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    &--title {
       color: #fff;
       font-weight: 700;
       text-decoration: none;
@@ -105,8 +104,8 @@
       font-weight: 700;
     }
     &:hover {
+      box-shadow: 0.5rem 0.5rem $light-orange, -0.5rem -0.5rem $soft-orange;
       transform: scale(1.05);
-      cursor: pointer;
     }
   }
 }
@@ -143,9 +142,8 @@
     width: 60%;
     padding: 3%;
     background-color: $dark-orange;
-    box-shadow: 0.5rem 0.5rem $light-orange, -0.5rem -0.5rem $soft-orange;
-    transition: transform 0.5s ease-in-out;
-    &--title > a {
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    &--title {
       color: #fff;
       font-weight: 700;
       text-decoration: none;
@@ -161,8 +159,8 @@
       left: initial;
     }
     &:hover {
+      box-shadow: 0.5rem 0.5rem $light-orange, -0.5rem -0.5rem $soft-orange;
       transform: scale(1.05);
-      cursor: pointer;
     }
   }
 }
@@ -249,8 +247,7 @@
       width: 60%;
       padding: 3%;
       background-color: $dark-orange;
-      box-shadow: 0.5rem 0.5rem $light-orange, -0.5rem -0.5rem $soft-orange;
-      transition: transform 0.5s ease-in-out;
+      transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
       @include media.query(">=md") {
         top: rem(-15px);
         left: rem(-30px);
@@ -264,8 +261,8 @@
         left: initial;
       }
       &:hover {
+        box-shadow: 0.5rem 0.5rem $light-orange, -0.5rem -0.5rem $soft-orange;
         transform: scale(1.05);
-        cursor: pointer;
       }
     }
     &--bottom {
@@ -275,8 +272,7 @@
       width: 60%;
       padding: 3%;
       background-color: $dark-orange;
-      box-shadow: 0.5rem 0.5rem $light-orange, -0.5rem -0.5rem $soft-orange;
-      transition: transform 0.5s ease-in-out;
+      transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
       @include media.query(">=md") {
         bottom: rem(11px);
       }
@@ -286,11 +282,11 @@
         left: initial;
       }
       &:hover {
+        box-shadow: 0.5rem 0.5rem $light-orange, -0.5rem -0.5rem $soft-orange;
         transform: scale(1.05);
-        cursor: pointer;
       }
     }
-    &--title > a {
+    &--title {
       color: #fff;
       font-weight: 700;
       text-decoration: none;
